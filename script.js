@@ -20,15 +20,11 @@ function choice(playerChoice)
         if(userWins === 0 && computerWins === 0)
         {
             document.getElementById("result").innerHTML = "";
-            console.log("reset");
         }
         let winner = playRound(playerChoice, getComputerChoice());
-    
         if(winner === "won")
         {
             userWins++;
-            
-
             if(userWins === 5)
             {                
                 document.getElementById("result").innerHTML = "You Win";
@@ -39,7 +35,6 @@ function choice(playerChoice)
         else if(winner === "loss")
         {
             computerWins++;
-            console.log("computer wins " + computerWins);
             if(computerWins === 5)
             {
                 document.getElementById("result").innerHTML = "Computer Wins";
