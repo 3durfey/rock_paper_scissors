@@ -8,24 +8,47 @@ function getComputerChoice()
     const ComputerSelection = computerChoices[rtrn];
     return ComputerSelection;
 }
-function getPlayerSelection()
-{
-    let valid;
-    let playerSelection = prompt("Enter choice: ");
 
-    do {
-    rtrn = playerSelection.toLowerCase();
-    if(rtrn === "rock" || rtrn === "paper" || rtrn === "scissors")
-    {
-        valid = true;
-    }
-    else
-    {
-        playerSelection = prompt("Invalid Choice. Re-Enter:")
-        valid = false;
-    }
-    } while (valid === false) 
-    return rtrn;
+let userWins = 0;
+let computerWins = 0;
+document.getElementById("rock").onclick = function() {choice("rock")};
+document.getElementById("paper").onclick = function() {choice("paper")};
+document.getElementById("scissors").onclick = function() {choice("scissors")};
+
+function choice(playerChoice)
+{
+        if(userWins === 0 && computerWins === 0)
+        {
+            document.getElementById("result").innerHTML = "";
+            console.log("reset");
+        }
+        let winner = playRound(playerChoice, getComputerChoice());
+    
+        if(winner === "won")
+        {
+            userWins++;
+            
+
+            if(userWins === 5)
+            {                
+                document.getElementById("result").innerHTML = "You Win";
+                computerWins = 0;
+                userWins = 0;
+            }
+        }
+        else if(winner === "loss")
+        {
+            computerWins++;
+            console.log("computer wins " + computerWins);
+            if(computerWins === 5)
+            {
+                document.getElementById("result").innerHTML = "Computer Wins";
+                computerWins = 0;
+                userWins = 0;
+            }
+        }
+        document.getElementById("computer_score").innerHTML = "Computer score: " + computerWins;
+        document.getElementById("user_score").innerHTML = "User score: " + userWins;
 }
 
 function playRound(player, computer)
@@ -68,48 +91,7 @@ function playRound(player, computer)
     {
         winner = "tie";
     }
+    console.log(winner);
     return winner;
 }
 
-function game()
-{
-    let gamesWon = 0;
-    let computerWon = 0;
-    let ties = 0;
-    for(let x = 0; x < 5; x++)
-    {
-        const computerChoice = getComputerChoice(); 
-        const playerChoice = getPlayerSelection();
-        let winner = playRound(playerChoice, computerChoice);
-        if(winner === "loss")
-        {
-            computerWon++;
-        }
-        else if(winner === "won")
-        {
-            gamesWon++;
-        }
-        else if(winner === "tie")
-        {
-            ties++;
-        }
-    }
-    console.log("Player wins: " + gamesWon);
-    console.log("Computer wins: " + computerWon);
-    console.log("Ties: " + ties);
-
-    if(computerWon > gamesWon)
-    {
-        console.log("Computer Wins");
-    }
-    else if(gamesWon > computerWon)
-    {
-        console.log("You Win");
-    }
-    else
-    {
-        console.log("Tie");
-    }
-}
-
-game();
