@@ -53,7 +53,6 @@ function choice(playerChoice)
         display_scores();
         add_row(winner);
 }
-
 function playRound(player, computer)
 {
 
@@ -120,12 +119,11 @@ function reset_table()
     {
         table.deleteRow(1);
     }
-
     computerWins = 0;
     userWins = 0;
     ties = 0;
-    document.getElementById("result").innerHTML = "________";
     round = 1;
+    document.getElementById("result").innerHTML = "________";
     display_scores();
 }
 
