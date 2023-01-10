@@ -23,7 +23,7 @@ function choice(playerChoice)
             computerWins = 0;
             userWins = 0;
             ties = 0;
-            document.getElementById("result").innerHTML = "";
+            document.getElementById("result").innerHTML = "________";
         }
         let winner = playRound(playerChoice, getComputerChoice());
         if(winner === "won")

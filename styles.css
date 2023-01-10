@@ -15,6 +15,14 @@ body {
     background-color: black;
 }
 
+#rock:hover,#paper:hover,#scissors:hover {
+    background-color: grey;
+    box-shadow: 0 9px black;
+}
+#rock:active,#paper:active,#scissors:active {
+    background-color: grey;
+    transform: translateY(4px);
+  }
 .container {
     display: flex;
     justify-content: center;
@@ -37,4 +45,12 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 40px;
+}
+p {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+.descriptor {
+    color: rgb(99, 99, 99);
 }
