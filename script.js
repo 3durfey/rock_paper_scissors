@@ -11,14 +11,18 @@ function getComputerChoice()
 
 let userWins = 0;
 let computerWins = 0;
+let ties = 0;
 document.getElementById("rock").onclick = function() {choice("rock")};
 document.getElementById("paper").onclick = function() {choice("paper")};
 document.getElementById("scissors").onclick = function() {choice("scissors")};
 
 function choice(playerChoice)
 {
-        if(userWins === 0 && computerWins === 0)
+        if(computerWins === 5 || userWins === 5)
         {
+            computerWins = 0;
+            userWins = 0;
+            ties = 0;
             document.getElementById("result").innerHTML = "";
         }
         let winner = playRound(playerChoice, getComputerChoice());
@@ -28,8 +32,6 @@ function choice(playerChoice)
             if(userWins === 5)
             {                
                 document.getElementById("result").innerHTML = "You Win";
-                computerWins = 0;
-                userWins = 0;
             }
         }
         else if(winner === "loss")
@@ -38,12 +40,16 @@ function choice(playerChoice)
             if(computerWins === 5)
             {
                 document.getElementById("result").innerHTML = "Computer Wins";
-                computerWins = 0;
-                userWins = 0;
             }
         }
-        document.getElementById("computer_score").innerHTML = "Computer score: " + computerWins;
-        document.getElementById("user_score").innerHTML = "User score: " + userWins;
+        else
+        {
+            ties++;
+            document.getElementById("ties").innerHTML = "Tie";
+        }
+        document.getElementById("computer_score").innerHTML = ":    " + computerWins;
+        document.getElementById("user_score").innerHTML = ":    " + userWins;
+        document.getElementById("ties").innerHTML = ":    " + ties;
 }
 
 function playRound(player, computer)
