@@ -24,10 +24,8 @@ function choice(playerChoice)
             userWins = 0;
             ties = 0;
             document.getElementById("result").innerHTML = "";
-
         }
         let winner = playRound(playerChoice, getComputerChoice());
-    
         if(winner === "won")
         {
             userWins++;
@@ -48,11 +46,10 @@ function choice(playerChoice)
         {
             ties++;
             document.getElementById("ties").innerHTML = "Tie";
-
         }
-        document.getElementById("computer_score").innerHTML = "Computer score: " + computerWins;
-        document.getElementById("user_score").innerHTML = "User score: " + userWins;
-        document.getElementById("ties").innerHTML = "Ties: " + ties;
+        document.getElementById("computer_score").innerHTML = ":    " + computerWins;
+        document.getElementById("user_score").innerHTML = ":    " + userWins;
+        document.getElementById("ties").innerHTML = ":    " + ties;
 }
 
 function playRound(player, computer)
