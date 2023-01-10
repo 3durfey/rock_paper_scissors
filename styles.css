@@ -1,7 +1,6 @@
 body {
     display: flex;
     min-height: 100vh;
-    flex-direction: column;
     justify-content: center;
     background-color: black;
 
@@ -9,23 +8,23 @@ body {
 .buttons {
     flex-grow: .2;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     gap: 20px;
     background-color: black;
 }
 
-#rock:hover,#paper:hover,#scissors:hover {
+#rock:hover,#paper:hover,#scissors:hover,#reset:hover {
     background-color: grey;
     box-shadow: 0 9px black;
 }
-#rock:active,#paper:active,#scissors:active {
+#rock:active,#paper:active,#scissors:active,#reset:active {
     background-color: grey;
     transform: translateY(4px);
   }
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     flex-direction: column;
 }
@@ -34,15 +33,15 @@ body {
 }
 .title {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex;
     flex-direction: column;
     font-size: 40px;
 }
 #result {
     height: 100px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     font-size: 40px;
 }
@@ -53,4 +52,21 @@ p {
 }
 .descriptor {
     color: rgb(99, 99, 99);
+}
+.left {
+    display: flex;
+    flex-grow: .5;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: darkgray;
+
+}
+.right {
+    flex-grow: .7;
+    background-color: grey;
+}
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
 }

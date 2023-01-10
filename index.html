@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
 <body>
-
+  <div class="left">
   <div class="title">Rock Paper Scissors</div>
   <p id="result">________</p>
 
@@ -19,6 +19,7 @@
     <button class="btn btn-dark btn-lg active" id="rock">Rock</button>
     <button class="btn btn-dark btn-lg active" id="paper">Paper</button>
     <button class="btn btn-dark btn-lg active" id="scissors">Scissors</button>
+    <button class="btn btn-dark btn-lg active" id="reset">RESET</button>
   </div>
 
   <div class="container">
@@ -38,7 +39,17 @@
       <p id="ties"></p>
     </div>
    </div>  
-
+  </div>
+  <div class="right">
+    <table style="width:100%" id="table1">
+      <tr>
+        <td>round</td>
+        <td>computer choice</td>
+        <td>user choice</td>
+        <td>winner</td>
+      </tr>
+    </table>
+  </div>
 </body>
 </html>
 
